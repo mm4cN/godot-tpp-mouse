@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://dfgx0wtxeb0nf"]
 
-[ext_resource type="Texture2D" uid="uid://bwrch7y1fivfh" path="res://assets/textures/nature/Textures/Rocks_Desert_Diffuse.png" id="1_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://bn0fuqywu7vt8" path="res://assets/textures/nature/Clover_1.gltf" id="2_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://etda1ao1l2wq" path="res://assets/textures/nature/Clover_2.gltf" id="3_trceg"]
-[ext_resource type="PackedScene" uid="uid://bmpbyybyqvxfe" path="res://assets/textures/nature/CommonTree_5.gltf" id="4_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://dgpqkmmvyvxgk" path="res://assets/textures/nature/Flower_4_Group.gltf" id="5_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://cq3caa2l2voc6" path="res://assets/textures/nature/Grass_Wispy_Tall.gltf" id="6_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://cbg7ckwxqkkft" path="res://assets/textures/nature/Pebble_Round_4.gltf" id="7_muem4"]
-[ext_resource type="PackedScene" uid="uid://jykk47acwt4l" path="res://assets/textures/nature/Pine_5.gltf" id="8_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://dbrpdmebb0kh0" path="res://assets/textures/nature/RockPath_Round_Thin.gltf" id="9_0ld40"]
-[ext_resource type="PackedScene" uid="uid://c3s6o8c6vshej" path="res://assets/textures/nature/TwistedTree_1.gltf" id="10_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://6br73uosx3i3" path="res://assets/textures/nature/TwistedTree_2.gltf" id="11_yc10j"]
+[ext_resource type="Texture2D" uid="uid://4jwkfivkxub7" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Brick/Brick_11-128x128.png" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://hmhpksyhoasj" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Stone/Stone_19-128x128.png" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://yfmun0x2debb" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Wood/Wood_07-128x128.png" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://d08warrljdj4g" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Stone/Stone_04-128x128.png" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://c8l21einuvjbd" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Metal/Metal_05-128x128.png" id="4_tipki"]
+[ext_resource type="Texture2D" uid="uid://ducf0gi0p1tis" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Plaster/Plaster_02-128x128.png" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://c5dao1r1xxlt3" path="res://scenes/player.tscn" id="12_eb6dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wukud"]
@@ -23,14 +18,48 @@ sky_material = SubResource("ProceduralSkyMaterial_wukud")
 [sub_resource type="Environment" id="Environment_wjb0r"]
 background_mode = 2
 sky = SubResource("Sky_il2jm")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 1
+tonemap_exposure = 0.5
+tonemap_white = 11.6
+ssao_intensity = 0.0
 sdfgi_enabled = true
-glow_enabled = true
 fog_enabled = true
-fog_density = 0.004
+fog_mode = 1
+fog_light_color = Color(0.1718592, 0.1520187, 0.14486915, 1)
+fog_light_energy = 1.91
+fog_sun_scatter = 0.1
+fog_density = 0.6
+fog_height = 2.0
+fog_height_density = 0.9748
+fog_depth_curve = 0.9999998
+volumetric_fog_albedo = Color(1.2480069, 0.9397207, 0.6214896, 1)
+volumetric_fog_anisotropy = -0.8
+volumetric_fog_length = 45.99
+volumetric_fog_detail_spread = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mc2jv"]
-albedo_texture = ExtResource("1_ya4ey")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb6dy"]
+albedo_texture = ExtResource("6_85g3d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+albedo_texture = ExtResource("4_o6xl0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+albedo_texture = ExtResource("1_0wfyh")
 uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tipki"]
+albedo_texture = ExtResource("2_tbgi4")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 2.6390104
+uv2_triplanar_sharpness = 2.0000007
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
+albedo_texture = ExtResource("3_tefeu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya4ey"]
+albedo_texture = ExtResource("4_tipki")
 
 [node name="world" type="Node3D" unique_id=1746178533]
 
@@ -44,44 +73,43 @@ environment = SubResource("Environment_wjb0r")
 [node name="map" type="Node3D" parent="." unique_id=159798738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
+[node name="CSGBox3D4" type="CSGBox3D" parent="map" unique_id=990778481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9444664, 3.0417495, 3.8598366)
+material_override = SubResource("StandardMaterial3D_eb6dy")
+use_collision = true
+size = Vector3(2, 0.5, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map" unique_id=15515951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039842844, 2.2683573, 3.996067)
+material_override = SubResource("StandardMaterial3D_choun")
+use_collision = true
+size = Vector3(1, 0.5, 2)
+
 [node name="floor" type="CSGBox3D" parent="map" unique_id=1607693329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29037476, 0.6446055, -0.16591263)
-material_override = SubResource("StandardMaterial3D_mc2jv")
+material_override = SubResource("StandardMaterial3D_sugp2")
 use_collision = true
-size = Vector3(100, 1, 100)
+size = Vector3(50, 1, 50)
 
-[node name="nature" type="Node3D" parent="." unique_id=996284209]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="map" unique_id=669445755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9696212, 0)
+material_override = SubResource("StandardMaterial3D_tipki")
+use_collision = true
+radius = 1.545
+height = 5.619
 
-[node name="Clover_12" parent="nature" unique_id=543342051 instance=ExtResource("2_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1533694, 0, -0.745564)
+[node name="CSGBox3D" type="CSGBox3D" parent="map" unique_id=119854853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2565534, 6.596666)
+material_override = SubResource("StandardMaterial3D_85g3d")
+use_collision = true
+size = Vector3(1, 0.2, 2)
 
-[node name="Clover_22" parent="nature" unique_id=258141422 instance=ExtResource("3_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8197193, 0, -0.99910545)
-
-[node name="CommonTree_52" parent="nature" unique_id=135059613 instance=ExtResource("4_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41618633, 0, -1.5690813)
-
-[node name="Flower_4_Group2" parent="nature" unique_id=1214747306 instance=ExtResource("5_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51205754, 0, -1.6750431)
-
-[node name="Grass_Wispy_Tall2" parent="nature" unique_id=558898396 instance=ExtResource("6_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106686115, 0, -0.61844254)
-
-[node name="Pebble_Round_42" parent="nature" unique_id=1346957993 instance=ExtResource("7_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3352013, 0, -1.6282902)
-
-[node name="Pine_52" parent="nature" unique_id=2146695724 instance=ExtResource("8_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.841751, 0, -13.029062)
-
-[node name="RockPath_Round_Thin2" parent="nature" unique_id=868724169 instance=ExtResource("9_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.498479, 0, -1.2283359)
-
-[node name="TwistedTree_12" parent="nature" unique_id=613172867 instance=ExtResource("10_gqmmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25368428, 0, -12.684786)
-
-[node name="TwistedTree_22" parent="nature" unique_id=24729436 instance=ExtResource("11_yc10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7458262, 0, -7.6326675)
+[node name="CSGBox3D2" type="CSGBox3D" parent="map" unique_id=354198186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019921422, 1.4029335, 8.606501)
+material_override = SubResource("StandardMaterial3D_ya4ey")
+use_collision = true
+size = Vector3(1, 0.5, 2)
 
 [node name="Player" parent="." unique_id=16287612 instance=ExtResource("12_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6831896, 0.2, -10.768488)
+transform = Transform3D(0.5624036, 0, -0.8268628, 0, 1, 0, 0.8268628, 0, 0.5624036, -6.7161036, 0.2, 4.008387)
 sensitivity_x = 0.2
