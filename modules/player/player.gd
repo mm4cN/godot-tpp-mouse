@@ -2,15 +2,15 @@ extends Character
 
 @onready var camera_mount = $camera_mount
 
-const WALK_SPEED = 2.0
-const RUN_SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 const MIN_CAMERA_PITCH = deg_to_rad(-35.0)
 const MAX_CAMERA_PITCH = deg_to_rad(50.0)
 
-@export_range(1.0, 20.0, 0.5) var animation_blend_smoothing := 8.0
-@export_range(0.01, 1.0, 0.01) var sensitivity_x = 0.12
-@export_range(0.01, 1.0, 0.01) var sensitivity_y = 0.10
+@export_range(1.0, 20.0, 0.5) var animation_blend_smoothing: float = 8.0
+@export_range(0.01, 1.0, 0.01) var sensitivity_x: float = 0.12
+@export_range(0.01, 1.0, 0.01) var sensitivity_y: float = 0.10
+@export_range(3.0, 5.0, 0.1) var jump_velocity: float = 4.5
+@export_range(1.0, 3.0, 0.1) var walk_speed: float = 2.0
+@export_range(3.0, 6.0, 0.1) var run_speed: float = 5.0
 
 var current_blend_position := Vector2.ZERO
 
@@ -34,15 +34,13 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	var is_running := Input.is_action_pressed("sprint")
-	var current_speed := RUN_SPEED if is_running else WALK_SPEED
+	var current_speed := run_speed if is_running else walk_speed
 	var blend_strength := 1.0 if is_running else 0.5
 	
 	var target_blend_position := input_dir * blend_strength
@@ -58,8 +56,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0.0, RUN_SPEED * delta * 6.0)
-		velocity.z = move_toward(velocity.z, 0.0, RUN_SPEED * delta * 6.0)
+		velocity.x = move_toward(velocity.x, 0.0, run_speed * delta * 6.0)
+		velocity.z = move_toward(velocity.z, 0.0, run_speed * delta * 6.0)
 
 	move_and_slide()
 	if model_instance:

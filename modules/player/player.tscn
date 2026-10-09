@@ -8,6 +8,9 @@ script = ExtResource("2_1j8n6")
 animation_blend_smoothing = 8.0
 sensitivity_x = 0.12
 sensitivity_y = 0.1
+jump_velocity = 4.5
+walk_speed = 2.0
+run_speed = 5.0
 
 [node name="camera_mount" type="Node3D" parent="." index="2" unique_id=2105217792]
 transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 1.7, 0)

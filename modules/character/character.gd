@@ -12,8 +12,10 @@ func _ready() -> void:
 	if collision_shape:
 		collision.shape = collision_shape
 
-	if model_slot.get_child_count() > 0:
-		model_instance = model_slot.get_child(0) as CharacterModel
+	for child in model_slot.get_children():
+		if child is CharacterModel:
+			model_instance = child
+			break
 
 	if not model_instance:
 		push_error("ModelSlot requires a CharacterModel child.")
