@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var collision_shape: Shape3D
 
+@onready var interactable: Interactable = $Interactable
 @onready var model_slot: Node3D = $ModelSlot
 @onready var collision: CollisionShape3D = $CollisionShape3D
 

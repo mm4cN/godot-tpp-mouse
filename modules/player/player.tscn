@@ -17,3 +17,9 @@ transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 
 
 [node name="Camera3D" type="Camera3D" parent="camera_mount" index="0" unique_id=1571083768]
 transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.9664904, -0.19238293, 1.2177278)
+
+[node name="InteractionRay" type="RayCast3D" parent="camera_mount/Camera3D" index="0" unique_id=1349469413]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

@@ -11,12 +11,15 @@ extends CanvasLayer
 		reticle_size = value
 		_update_reticle()
 
+@onready var reticle = $ReticleCenter/Reticle
+
+func set_interaction_available(available: bool) -> void:
+	reticle.set_interaction_available(available)
+
 func _ready() -> void:
 	_update_reticle()
 
 func _update_reticle() -> void:
-	var reticle := get_node_or_null("ReticleCenter/Reticle")
-
 	if reticle:
 		reticle.custom_minimum_size = reticle_size
 		reticle.set("texture", reticle_texture)

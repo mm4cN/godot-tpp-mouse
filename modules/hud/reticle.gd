@@ -6,11 +6,6 @@ extends Control
 		texture = value
 		queue_redraw()
 
-@export var color := Color(1.0, 1.0, 1.0, 0.85):
-	set(value):
-		color = value
-		queue_redraw()
-
 @export_range(2.0, 15.0, 0.5) var radius := 10.0:
 	set(value):
 		radius = value
@@ -26,9 +21,26 @@ extends Control
 		dot_radius = value
 		queue_redraw()
 
+@export var normal_color := Color(1.0, 1.0, 1.0, 0.85)
+@export var char_interaction_color := Color(0.906, 1.0, 0.302, 1.0)
+
+var interaction_available := false
+
+func set_interaction_available(available: bool) -> void:
+	if interaction_available == available:
+		return
+
+	interaction_available = available
+	queue_redraw()
 
 func _draw() -> void:
 	var center := size * 0.5
+
+	var current_color := (
+		char_interaction_color
+		if interaction_available
+		else normal_color
+	)
 
 	if texture:
 		var texture_size := texture.get_size()
@@ -42,7 +54,9 @@ func _draw() -> void:
 		draw_texture_rect(
 			texture,
 			Rect2(draw_position, draw_size),
-			false
+			false,
+			#TODO: this alters texture, implement texture frames
+			current_color
 		)
 		return
 
@@ -52,10 +66,10 @@ func _draw() -> void:
 		0.0,
 		TAU,
 		64,
-		color,
+		current_color,
 		line_width,
 		true
 	)
 
 	if dot_radius > 0.0:
-		draw_circle(center, dot_radius, color)
+		draw_circle(center, dot_radius, current_color)

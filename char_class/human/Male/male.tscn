@@ -1,42 +1,44 @@
 [gd_scene format=3 uid="uid://bgssqtsbxveaa"]
 
-[ext_resource type="Script" uid="uid://b8s1k2dkbgctr" path="res://characters/human/human.gd" id="1_7es7v"]
-[ext_resource type="PackedScene" uid="uid://c7v8m35m3wl8l" path="res://assets/characters/HumanM_Model.fbx" id="1_vabrt"]
-[ext_resource type="Animation" uid="uid://dtna7xs8ffoci" path="res://assets/animations/library/Male/backward_left.res" id="2_7es7v"]
-[ext_resource type="Animation" uid="uid://c6bdw08jsigac" path="res://assets/animations/library/Male/backward_right.res" id="3_3fr0w"]
-[ext_resource type="Animation" uid="uid://cfcyhvnv8sywi" path="res://assets/animations/library/Male/forward_left.res" id="4_cblpg"]
-[ext_resource type="Animation" uid="uid://c0os5ilnuvu3l" path="res://assets/animations/library/Male/forward_right.res" id="5_bpxer"]
-[ext_resource type="Animation" uid="uid://cf42ltjeboyg6" path="res://assets/animations/library/Male/idle.res" id="6_et1hk"]
-[ext_resource type="Animation" uid="uid://crurspr4ceca2" path="res://assets/animations/library/Male/jump.res" id="7_20rlq"]
-[ext_resource type="Animation" uid="uid://c325kyppw06se" path="res://assets/animations/library/Male/run_backward.res" id="8_j00au"]
-[ext_resource type="Animation" uid="uid://bul3kw3t0nm5w" path="res://assets/animations/library/Male/run_forward.res" id="9_8k81k"]
-[ext_resource type="Animation" uid="uid://dwk3uf1s8etcg" path="res://assets/animations/library/Male/run_forward_left.res" id="10_0cupy"]
-[ext_resource type="Animation" uid="uid://ctpv6ck0kdkvl" path="res://assets/animations/library/Male/run_forward_right.res" id="11_sxwnb"]
-[ext_resource type="Animation" uid="uid://cmyx3sasj8no3" path="res://assets/animations/library/Male/run_left.res" id="12_ma1jg"]
-[ext_resource type="Animation" uid="uid://besudbjfogoud" path="res://assets/animations/library/Male/run_right.res" id="13_lg6jm"]
-[ext_resource type="Animation" uid="uid://ldn0lefffpfd" path="res://assets/animations/library/Male/walk_backward.res" id="14_fh6lj"]
-[ext_resource type="Animation" uid="uid://c55bs0rs1nfm0" path="res://assets/animations/library/Male/walk_forward.res" id="15_w2a77"]
-[ext_resource type="Animation" uid="uid://cda3wuv5k6cgp" path="res://assets/animations/library/Male/walk_left.res" id="16_7onwr"]
-[ext_resource type="Animation" uid="uid://cv0eraybfsyjt" path="res://assets/animations/library/Male/walk_right.res" id="17_681cu"]
+[ext_resource type="Script" uid="uid://c1o5tj82cnhyv" path="res://modules/character/humanoid_model.gd" id="1_84vbs"]
+[ext_resource type="PackedScene" uid="uid://c7v8m35m3wl8l" path="res://assets/characters/HumanM_Model.fbx" id="2_yojpc"]
+[ext_resource type="Animation" uid="uid://dtna7xs8ffoci" path="res://assets/animations/library/Male/backward_left.res" id="3_1pojs"]
+[ext_resource type="Animation" uid="uid://c6bdw08jsigac" path="res://assets/animations/library/Male/backward_right.res" id="4_bpedf"]
+[ext_resource type="Animation" uid="uid://cfcyhvnv8sywi" path="res://assets/animations/library/Male/forward_left.res" id="5_jabdb"]
+[ext_resource type="Animation" uid="uid://c0os5ilnuvu3l" path="res://assets/animations/library/Male/forward_right.res" id="6_2q3pv"]
+[ext_resource type="Animation" uid="uid://cf42ltjeboyg6" path="res://assets/animations/library/Male/idle.res" id="7_o6734"]
+[ext_resource type="Animation" uid="uid://crurspr4ceca2" path="res://assets/animations/library/Male/jump.res" id="8_0vppj"]
+[ext_resource type="Animation" uid="uid://c325kyppw06se" path="res://assets/animations/library/Male/run_backward.res" id="9_0oqrd"]
+[ext_resource type="Animation" uid="uid://bul3kw3t0nm5w" path="res://assets/animations/library/Male/run_forward.res" id="10_rvjhi"]
+[ext_resource type="Animation" uid="uid://dwk3uf1s8etcg" path="res://assets/animations/library/Male/run_forward_left.res" id="11_tbaby"]
+[ext_resource type="Animation" uid="uid://ctpv6ck0kdkvl" path="res://assets/animations/library/Male/run_forward_right.res" id="12_sm2po"]
+[ext_resource type="Animation" uid="uid://cmyx3sasj8no3" path="res://assets/animations/library/Male/run_left.res" id="13_gh7bx"]
+[ext_resource type="Animation" uid="uid://besudbjfogoud" path="res://assets/animations/library/Male/run_right.res" id="14_6oktu"]
+[ext_resource type="Animation" uid="uid://bkpdcci0ivee1" path="res://assets/animations/library/Male/talk.res" id="15_84vbs"]
+[ext_resource type="Animation" uid="uid://ldn0lefffpfd" path="res://assets/animations/library/Male/walk_backward.res" id="15_y6ons"]
+[ext_resource type="Animation" uid="uid://c55bs0rs1nfm0" path="res://assets/animations/library/Male/walk_forward.res" id="16_0lvkl"]
+[ext_resource type="Animation" uid="uid://cda3wuv5k6cgp" path="res://assets/animations/library/Male/walk_left.res" id="17_go35t"]
+[ext_resource type="Animation" uid="uid://cv0eraybfsyjt" path="res://assets/animations/library/Male/walk_right.res" id="18_gmbnb"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_61j7y"]
 _data = {
-&"backward_left": ExtResource("2_7es7v"),
-&"backward_right": ExtResource("3_3fr0w"),
-&"forward_left": ExtResource("4_cblpg"),
-&"forward_right": ExtResource("5_bpxer"),
-&"idle": ExtResource("6_et1hk"),
-&"jump": ExtResource("7_20rlq"),
-&"run_backward": ExtResource("8_j00au"),
-&"run_forward": ExtResource("9_8k81k"),
-&"run_forward_left": ExtResource("10_0cupy"),
-&"run_forward_right": ExtResource("11_sxwnb"),
-&"run_left": ExtResource("12_ma1jg"),
-&"run_right": ExtResource("13_lg6jm"),
-&"walk_backward": ExtResource("14_fh6lj"),
-&"walk_forward": ExtResource("15_w2a77"),
-&"walk_left": ExtResource("16_7onwr"),
-&"walk_right": ExtResource("17_681cu")
+&"backward_left": ExtResource("3_1pojs"),
+&"backward_right": ExtResource("4_bpedf"),
+&"forward_left": ExtResource("5_jabdb"),
+&"forward_right": ExtResource("6_2q3pv"),
+&"idle": ExtResource("7_o6734"),
+&"jump": ExtResource("8_0vppj"),
+&"run_backward": ExtResource("9_0oqrd"),
+&"run_forward": ExtResource("10_rvjhi"),
+&"run_forward_left": ExtResource("11_tbaby"),
+&"run_forward_right": ExtResource("12_sm2po"),
+&"run_left": ExtResource("13_gh7bx"),
+&"run_right": ExtResource("14_6oktu"),
+&"talk": ExtResource("15_84vbs"),
+&"walk_backward": ExtResource("15_y6ons"),
+&"walk_forward": ExtResource("16_0lvkl"),
+&"walk_left": ExtResource("17_go35t"),
+&"walk_right": ExtResource("18_gmbnb")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i4ail"]
@@ -134,6 +136,9 @@ blend_point_14/node = SubResource("AnimationNodeAnimation_822t6")
 blend_point_14/pos = Vector2(0.4, -0.6)
 blend_point_14/name = &"run_forward_right"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_84vbs"]
+animation = &"talk"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a38lo"]
 advance_mode = 2
 
@@ -141,20 +146,31 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l71n6"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t6e06"]
+xfade_time = 0.15
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1dyku"]
+xfade_time = 0.15
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cgasb"]
-states/End/position = Vector2(606, 100.3125)
-states/Start/position = Vector2(224.5, 100.125)
+states/End/position = Vector2(749.5, 98.265625)
+states/Start/position = Vector2(224.5, 100.21875)
 states/jump/node = SubResource("AnimationNodeAnimation_i4ail")
 states/jump/position = Vector2(306.88007, 220.90625)
 states/locomotion/node = SubResource("AnimationNodeBlendSpace2D_3v2ag")
 states/locomotion/position = Vector2(397.5, 100.40625)
-transitions = ["Start", "locomotion", SubResource("AnimationNodeStateMachineTransition_a38lo"), "locomotion", "jump", SubResource("AnimationNodeStateMachineTransition_4ni07"), "jump", "locomotion", SubResource("AnimationNodeStateMachineTransition_l71n6")]
+states/talk/node = SubResource("AnimationNodeAnimation_84vbs")
+states/talk/position = Vector2(562.58, 99.2314)
+transitions = ["Start", "locomotion", SubResource("AnimationNodeStateMachineTransition_a38lo"), "locomotion", "jump", SubResource("AnimationNodeStateMachineTransition_4ni07"), "jump", "locomotion", SubResource("AnimationNodeStateMachineTransition_l71n6"), "locomotion", "talk", SubResource("AnimationNodeStateMachineTransition_t6e06"), "talk", "locomotion", SubResource("AnimationNodeStateMachineTransition_1dyku")]
 graph_offset = Vector2(-45.419983, 15.090009)
 
-[node name="Human" type="Node3D" unique_id=539569892]
-script = ExtResource("1_7es7v")
+[node name="Human" type="Node3D" unique_id=539569892 node_paths=PackedStringArray("animation_tree")]
+script = ExtResource("1_84vbs")
+animation_tree = NodePath("HumanM_Model/AnimationTree")
 
-[node name="HumanM_Model" parent="." unique_id=4231577 instance=ExtResource("1_vabrt")]
+[node name="HumanM_Model" parent="." unique_id=4231577 instance=ExtResource("2_yojpc")]
 transform = Transform3D(-0.9984171, 0, -0.05624385, 0, 1, 0, 0.05624385, 0, -0.9984171, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HumanM_Model" unique_id=1861663]

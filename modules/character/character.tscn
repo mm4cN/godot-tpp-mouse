@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bd221445a0epl"]
 
 [ext_resource type="Script" uid="uid://ditpip0cdqoi7" path="res://modules/character/character.gd" id="1_02sh4"]
+[ext_resource type="Script" uid="uid://bo3j4g8jvfrfs" path="res://modules/interactions/char_interactable.gd" id="2_yevg2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yu7g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_02sh4"]
 
 [node name="Character" type="CharacterBody3D" unique_id=276327364]
 script = ExtResource("1_02sh4")
@@ -12,3 +15,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_5yu7g")
 
 [node name="ModelSlot" type="Node3D" parent="." unique_id=2006221295]
+
+[node name="Interactable" type="Area3D" parent="." unique_id=128292779]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_yevg2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1434762646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_02sh4")
+debug_color = Color(0.656876, 0.51517755, 0.10297512, 0.41960785)
