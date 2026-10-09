@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://u8yo4o8ddqo2"]
+
+[ext_resource type="PackedScene" uid="uid://bd221445a0epl" path="res://modules/character/character.tscn" id="1_r1yqg"]
+[ext_resource type="PackedScene" uid="uid://80gq6jur2hyn" path="res://char_class/human/Female/female.tscn" id="2_auw3j"]
+
+[node name="FemaleNpc" unique_id=276327364 instance=ExtResource("1_r1yqg")]
+
+[node name="Female" parent="ModelSlot" parent_id_path=PackedInt32Array(2006221295) index="0" unique_id=1044972383 instance=ExtResource("2_auw3j")]
+
+[connection signal="interacted" from="Interactable" to="ModelSlot/Female" method="on_interacted"]
