@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfgx0wtxeb0nf"]
 
 [ext_resource type="Texture2D" uid="uid://4jwkfivkxub7" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Brick/Brick_11-128x128.png" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b4ysysid4468t" path="res://modules/hud/game_hud.tscn" id="1_tipki"]
 [ext_resource type="Texture2D" uid="uid://hmhpksyhoasj" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Stone/Stone_19-128x128.png" id="2_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://yfmun0x2debb" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Wood/Wood_07-128x128.png" id="3_tefeu"]
 [ext_resource type="Texture2D" uid="uid://d08warrljdj4g" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Stone/Stone_04-128x128.png" id="4_o6xl0"]
@@ -62,6 +63,9 @@ albedo_texture = ExtResource("3_tefeu")
 albedo_texture = ExtResource("4_tipki")
 
 [node name="world" type="Node3D" unique_id=1746178533]
+
+[node name="GameHud" parent="." unique_id=2055155891 instance=ExtResource("1_tipki")]
+reticle_size = Vector2(32, 32)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=675310673]
 transform = Transform3D(-0.6986249, 0.621848, 0.35387623, 0.5082683, 0.08323209, 0.8571673, 0.50357395, 0.7787025, -0.3742136, 0, 0, 0)
