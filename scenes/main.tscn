@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d08warrljdj4g" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Stone/Stone_04-128x128.png" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://c8l21einuvjbd" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Metal/Metal_05-128x128.png" id="4_tipki"]
 [ext_resource type="Texture2D" uid="uid://ducf0gi0p1tis" path="res://assets/textures/SBS - Tiny Texture Pack 2 - 128x128/128x128/Plaster/Plaster_02-128x128.png" id="6_85g3d"]
-[ext_resource type="PackedScene" uid="uid://c5dao1r1xxlt3" path="res://scenes/player.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://c5dao1r1xxlt3" path="res://modules/player/player.tscn" id="12_eb6dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wukud"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

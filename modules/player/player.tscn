@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://c5dao1r1xxlt3"]
 
-[ext_resource type="Script" uid="uid://bud505w08icqk" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bud505w08icqk" path="res://modules/player/player.gd" id="1_qxsr1"]
 [ext_resource type="PackedScene" uid="uid://c7v8m35m3wl8l" path="res://assets/characters/HumanM_Model.fbx" id="2_g2els"]
-[ext_resource type="Animation" uid="uid://bq4hr2updpaj4" path="res://assets/animations/library/idle.res" id="3_3v2ag"]
-[ext_resource type="Animation" uid="uid://duq66j3tmxlfx" path="res://assets/animations/library/backward_left.res" id="3_fulsm"]
-[ext_resource type="Animation" uid="uid://cc5c6w8cehfa6" path="res://assets/animations/library/backward_right.res" id="4_4r5pv"]
-[ext_resource type="Animation" uid="uid://bbl16gac47c35" path="res://assets/animations/library/jump.res" id="4_jej6c"]
-[ext_resource type="Animation" uid="uid://b2x60c5q81d30" path="res://assets/animations/library/forward_left.res" id="5_60mlk"]
-[ext_resource type="Animation" uid="uid://h5moiep7fwti" path="res://assets/animations/library/run_backward.res" id="5_f1ej7"]
-[ext_resource type="Animation" uid="uid://r4av0xv8gqbg" path="res://assets/animations/library/forward_right.res" id="6_i4ail"]
-[ext_resource type="Animation" uid="uid://bcwg2v3kregax" path="res://assets/animations/library/run_forward.res" id="6_oprun"]
-[ext_resource type="Animation" uid="uid://cil3p5qc4vwr4" path="res://assets/animations/library/run_left.res" id="7_a8ls1"]
-[ext_resource type="Animation" uid="uid://hgmkgkaucpk1" path="res://assets/animations/library/run_right.res" id="8_qfm1y"]
-[ext_resource type="Animation" uid="uid://dn61mahx4ib3g" path="res://assets/animations/library/walk_backward.res" id="9_fulsm"]
-[ext_resource type="Animation" uid="uid://wi8de0cots0x" path="res://assets/animations/library/walk_forward.res" id="10_4r5pv"]
-[ext_resource type="Animation" uid="uid://ft413ncnih3y" path="res://assets/animations/library/walk_left.res" id="11_60mlk"]
-[ext_resource type="Animation" uid="uid://bjuwbrwfhehdq" path="res://assets/animations/library/run_forward_left.res" id="11_a38lo"]
-[ext_resource type="Animation" uid="uid://jn31hea1brkv" path="res://assets/animations/library/run_forward_right.res" id="12_4ni07"]
-[ext_resource type="Animation" uid="uid://dvfxrwyyv85gj" path="res://assets/animations/library/walk_right.res" id="12_i4ail"]
+[ext_resource type="Animation" uid="uid://cf42ltjeboyg6" path="res://assets/animations/library/idle.res" id="3_3v2ag"]
+[ext_resource type="Animation" uid="uid://dtna7xs8ffoci" path="res://assets/animations/library/backward_left.res" id="3_fulsm"]
+[ext_resource type="Animation" uid="uid://c6bdw08jsigac" path="res://assets/animations/library/backward_right.res" id="4_4r5pv"]
+[ext_resource type="Animation" uid="uid://crurspr4ceca2" path="res://assets/animations/library/jump.res" id="4_jej6c"]
+[ext_resource type="Animation" uid="uid://cfcyhvnv8sywi" path="res://assets/animations/library/forward_left.res" id="5_60mlk"]
+[ext_resource type="Animation" uid="uid://c325kyppw06se" path="res://assets/animations/library/run_backward.res" id="5_f1ej7"]
+[ext_resource type="Animation" uid="uid://c0os5ilnuvu3l" path="res://assets/animations/library/forward_right.res" id="6_i4ail"]
+[ext_resource type="Animation" uid="uid://bul3kw3t0nm5w" path="res://assets/animations/library/run_forward.res" id="6_oprun"]
+[ext_resource type="Animation" uid="uid://cmyx3sasj8no3" path="res://assets/animations/library/run_left.res" id="7_a8ls1"]
+[ext_resource type="Animation" uid="uid://besudbjfogoud" path="res://assets/animations/library/run_right.res" id="8_qfm1y"]
+[ext_resource type="Animation" uid="uid://ldn0lefffpfd" path="res://assets/animations/library/walk_backward.res" id="9_fulsm"]
+[ext_resource type="Animation" uid="uid://c55bs0rs1nfm0" path="res://assets/animations/library/walk_forward.res" id="10_4r5pv"]
+[ext_resource type="Animation" uid="uid://cda3wuv5k6cgp" path="res://assets/animations/library/walk_left.res" id="11_60mlk"]
+[ext_resource type="Animation" uid="uid://dwk3uf1s8etcg" path="res://assets/animations/library/run_forward_left.res" id="11_a38lo"]
+[ext_resource type="Animation" uid="uid://ctpv6ck0kdkvl" path="res://assets/animations/library/run_forward_right.res" id="12_4ni07"]
+[ext_resource type="Animation" uid="uid://cv0eraybfsyjt" path="res://assets/animations/library/walk_right.res" id="12_i4ail"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_v2wry"]
 radius = 0.3
@@ -155,7 +155,7 @@ transitions = ["Start", "locomotion", SubResource("AnimationNodeStateMachineTran
 graph_offset = Vector2(-45.419983, 15.090009)
 
 [node name="Player" type="CharacterBody3D" unique_id=16287612]
-script = ExtResource("1_g2els")
+script = ExtResource("1_qxsr1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2110070217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
