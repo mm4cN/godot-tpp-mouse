@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="third-person-mouse"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="uid://bmlv3g5v82cpo"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

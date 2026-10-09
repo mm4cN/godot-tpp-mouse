@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dlphjkjfbbtck"]
+
+[ext_resource type="PackedScene" uid="uid://bkquyr1kec277" path="res://modules/player/player.tscn" id="1_p5bqu"]
+[ext_resource type="PackedScene" uid="uid://bgssqtsbxveaa" path="res://characters/human/human.tscn" id="2_peqnm"]
+
+[node name="HumanPlayer" unique_id=276327364 instance=ExtResource("1_p5bqu")]
+
+[node name="Human" parent="ModelSlot" parent_id_path=PackedInt32Array(2006221295) index="0" unique_id=539569892 instance=ExtResource("2_peqnm")]

@@ -1,9 +1,6 @@
-extends CharacterBody3D
+extends Character
 
 @onready var camera_mount = $camera_mount
-@onready var animation_tree: AnimationTree = $model/HumanM_Model/AnimationTree
-@onready var animation_state: AnimationNodeStateMachinePlayback = \
-	animation_tree["parameters/playback"]
 
 const WALK_SPEED = 2.0
 const RUN_SPEED = 5.0
@@ -18,9 +15,8 @@ const MAX_CAMERA_PITCH = deg_to_rad(50.0)
 var current_blend_position := Vector2.ZERO
 
 func _ready():
+	super._ready()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	animation_tree.active = true
-	animation_state.start("locomotion")
 	
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -55,8 +51,8 @@ func _physics_process(delta: float) -> void:
 		1.0 - exp(-animation_blend_smoothing * delta)
 	)
 
-	animation_tree["parameters/locomotion/blend_position"] = \
-		current_blend_position
+	if model_instance:
+		model_instance.set_locomotion(current_blend_position)
 	
 	if direction:
 		velocity.x = direction.x * current_speed
@@ -66,7 +62,5 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0.0, RUN_SPEED * delta * 6.0)
 
 	move_and_slide()
-	if is_on_floor():
-		animation_state.travel("locomotion")
-	else:
-		animation_state.travel("jump")
+	if model_instance:
+		model_instance.set_grounded(is_on_floor())
